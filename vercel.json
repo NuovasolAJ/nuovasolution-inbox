@@ -1,0 +1,21 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "regions": ["cdg1"],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
+      ]
+    }
+  ],
+  "env": {
+    "INBOX_API_URL": "@inbox-api-url",
+    "OPERATOR_SEND_URL": "@operator-send-url",
+    "AUTH_USERNAME": "@auth-username",
+    "AUTH_PASSWORD": "@auth-password",
+    "AUTH_SECRET": "@auth-secret"
+  }
+}
